@@ -1,0 +1,1 @@
+This project serves for the individualization of a modified csl for printing Chinese references in different formats. The csl is to be used with Zotero. The project creates a simple website in which the desired modifications can be selected and a modified csl is created, either for download or for copy-and-paste.

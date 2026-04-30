@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSL-Stil-Generator</title>
+    <title>CSL style generator</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         .option-group { margin-bottom: 1.5rem; }
@@ -12,55 +12,60 @@
 </head>
 <body>
     <div class="container mt-5">
-        <h1 class="mb-4">CSL-Stil anpassen</h1>
+        <h1 class="mb-4">Customize your citation style</h1>
         <form id="csl-options">
+
             <div class="option-group">
-                <h4>Autorformatierung</h4>
+                <h4>Title formatting</h4>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="author-short" checked>
-                    <label class="form-check-label" for="author-short">Kurze Autorennamen (Nachname, Vorname)</label>
+                    <input class="form-check-input" type="checkbox" id="title-hanzi" checked>
+                    <label class="form-check-label" for="title-italic">(Primary-)Title in Chinese characters</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="title-translation-square" checked>
+                    <label class="form-check-label" for="title-quotes">Title translation in square brackets</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="title-translation-curved" checked>
+                    <label class="form-check-label" for="title-quotes">Title translation in curved brackets</label>
                 </div>
             </div>
 
             <div class="option-group">
-                <h4>Titelformatierung</h4>
+                <h4>Publisher</h4>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="title-italic" checked>
-                    <label class="form-check-label" for="title-italic">Titel kursiv</label>
+                    <input class="form-check-input" type="checkbox" id="journal-name-hanzi" checked>
+                    <label class="form-check-label" for="doi-always">Journal name in Chinese characters</label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="title-quotes" checked>
-                    <label class="form-check-label" for="title-quotes">Titel in Anführungszeichen</label>
-                </div>
-            </div>
-
-            <div class="option-group">
-                <h4>DOI/URL</h4>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="doi-always" checked>
-                    <label class="form-check-label" for="doi-always">DOI immer anzeigen</label>
+                    <input class="form-check-input" type="checkbox" id="journal-translation-square" checked>
+                    <label class="form-check-label" for="url-always">Journal name translation in square brackets</label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="url-always" checked>
-                    <label class="form-check-label" for="url-always">URL immer anzeigen</label>
+                    <input class="form-check-input" type="checkbox" id="journal-translation-curved" checked>
+                    <label class="form-check-label" for="url-always">Journal name translation in curved brackets</label>
                 </div>
-            </div>
-
-            <div class="option-group">
-                <h4>Zeitschriftenabkürzungen</h4>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="journal-abbrev" checked>
-                    <label class="form-check-label" for="journal-abbrev">Zeitschriftennamen abkürzen</label>
+                    <input class="form-check-input" type="checkbox" id="publisher-hanzi" checked>
+                    <label class="form-check-label" for="url-always">Publisher name in Chinese characters</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="publisher-translation-square" checked>
+                    <label class="form-check-label" for="url-always">Publisher name translation in square brackets</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="publisher-translation-curved" checked>
+                    <label class="form-check-label" for="url-always">Publisher name translation in curved brackets</label>
                 </div>
             </div>
 
-            <button type="button" class="btn btn-primary mt-3" id="generate-btn">Stil generieren</button>
+            <button type="button" class="btn btn-primary mt-3" id="generate-btn">Generate style</button>
         </form>
 
         <div id="download-section" class="mt-4" style="display: none;">
-            <h3>Dein angepasster CSL-Stil:</h3>
+            <h3>Your customized csl-style:</h3>
             <pre id="generated-csl"></pre>
-            <a id="download-link" class="btn btn-success mt-2" download="mein-angepasster-stil.csl">Stil herunterladen</a>
+            <a id="download-link" class="btn btn-success mt-2" download="mein-angepasster-stil.csl">Download style file</a>
         </div>
     </div>
 
