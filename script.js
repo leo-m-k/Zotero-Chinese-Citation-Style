@@ -43,6 +43,14 @@ document.getElementById('copy-btn').addEventListener('click', function() {
         });
 });
 
+// Event-Listener für den gesamten Container hinzufügen
+document.getElementById('download-section').addEventListener('click', function(event) {
+    if (event.target.id === 'copy-btn') {
+        const cslCode = document.getElementById('generated-csl').textContent;
+        copyToClipboard(cslCode);
+    }
+});
+
 /**
  * Passt den CSL-Code basierend auf den ausgewählten Optionen an.
  * @param {string} cslCode - Der Basis-CSL-Code.
