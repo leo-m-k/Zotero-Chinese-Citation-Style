@@ -26,6 +26,23 @@ document.getElementById('generate-btn').addEventListener('click', async function
     document.getElementById('download-section').style.display = 'block';
 });
 
+// Funktion zum Kopieren in die Zwischenablage
+document.getElementById('copy-btn').addEventListener('click', function() {
+    const cslCode = document.getElementById('generated-csl').textContent;
+
+    // Text in die Zwischenablage kopieren
+    navigator.clipboard.writeText(cslCode)
+        .then(() => {
+            // Erfolgreich kopiert
+            alert('CSL-Code wurde in die Zwischenablage kopiert!');
+        })
+        .catch(err => {
+            // Fehler beim Kopieren
+            console.error('Fehler beim Kopieren:', err);
+            alert('Das Kopieren hat nicht funktioniert. Bitte kopiere den Code manuell.');
+        });
+});
+
 /**
  * Passt den CSL-Code basierend auf den ausgewählten Optionen an.
  * @param {string} cslCode - Der Basis-CSL-Code.
